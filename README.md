@@ -47,6 +47,6 @@ def update_train_valid_subdirecotry_dict(subdirectories, labels, subdir_dict):
 
 ### Note
 
-- Ultralytics YOLOv9 is used 
+- Ultralytics YOLOv9 is used.
 - Pretrained YOLOv9c model, yolov9c.pt is used to generate bounding boxes for birds.
-
+-  [BIRDS 525 SPECIES - IMAGE CLASSIFICATION](https://www.kaggle.com/datasets/gpiosenka/100-bird-species) dataset has only one bird in each image. If YOLOv9 fails to detect a single bird in an image, the script excludes the image from training or validation data.
