@@ -44,3 +44,9 @@ def update_train_valid_subdirecotry_dict(subdirectories, labels, subdir_dict):
 
     ...
 ```
+
+### Note
+
+- Ultralytics YOLOv9 is used 
+- Pretrained YOLOv9c model, yolov9c.pt is used to generate bounding boxes for birds.
+
