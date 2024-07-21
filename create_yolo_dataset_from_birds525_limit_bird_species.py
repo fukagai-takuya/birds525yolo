@@ -3,8 +3,6 @@ import re
 from pathlib import Path
 from ultralytics import YOLO
 
-NUMBER_OF_BIRD_SPECIES = 525
-
 def update_train_valid_subdirecotry_dict(subdirectories, labels, subdir_dict):
     """
     Returns:
@@ -21,9 +19,35 @@ def update_train_valid_subdirecotry_dict(subdirectories, labels, subdir_dict):
         Labels are sorted after eliminating duplicate space characters.
     """
 
+    """
+    target_bird_species = [
+        'AMERICAN COOT',
+        'AMERICAN WIGEON',
+        'BLUE HERON',
+        'CROW',
+        'EUROPEAN TURTLE DOVE',
+        'MALAGASY WHITE EYE',
+        'MALLARD DUCK',
+        'MANDRIN DUCK',
+        'ROCK DOVE',
+    ]
+    """
+
+    target_bird_species = [
+        'BLUE HERON',
+        'MALLARD DUCK',
+        'EUROPEAN TURTLE DOVE',
+        'ROCK DOVE',
+    ]    
+
     for subdir in subdirectories.iterdir():
         label_name = subdir.name.strip()
         label_name = re.sub('\s+', ' ', label_name)
+
+        # limit the target bird species from 525 to the specified species
+        if label_name not in target_bird_species:
+            continue
+        
         labels.append(label_name)
         subdir_dict[label_name] = subdir
 
@@ -58,10 +82,6 @@ def check_birds525_sub_dir(train_dir, valid_dir, label_names, train_dict, valid_
 
     train_labels_length = len(train_labels)
 
-    if train_labels_length != NUMBER_OF_BIRD_SPECIES:
-        print('The train directory must have' , NUMBER_OF_BIRD_SPECIES, 'subdirectories')
-        return False    
-    
     if len(valid_labels) != train_labels_length:
         print('The train and the valid directories must have the same number of subdirectories')
         return False
