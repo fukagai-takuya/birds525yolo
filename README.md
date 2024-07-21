@@ -24,6 +24,14 @@ python3 ./create_yolo_dataset_from_birds525.py path/to/kaggle/birds525/archive/ 
 python3 ./create_yolo_dataset_from_birds525_limit_bird_species.py path/to/kaggle/birds525/archive/ path/to/outputdir/
 ```
 
+### Example of training command
+
+Specify imgsz=224, the image size of BIRDS 525 SPECIES - IMAGE CLASSIFICATION dataset.
+
+```
+yolo train model=yolov8n.pt data=path/to/outputdir/data.yaml epochs=100 imgsz=224
+```
+
 ### How to specify target birds species
 
 When using create_yolo_dataset_from_birds525_limit_bird_species.py, specify target birds species by modifying following lines. It generates Ultralytics YOLO format dataset for "BLUE HERON", "MALLARD DUCK", "EUROPEAN TURTLE DOVE", and "ROCK DOVE" if the following lines are used without modification.
