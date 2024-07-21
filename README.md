@@ -26,7 +26,7 @@ python3 ./create_yolo_dataset_from_birds525_limit_bird_species.py path/to/kaggle
 
 ### How to specify target birds species
 
-When using create_yolo_dataset_from_birds525_limit_bird_species.py, specify target birds species by modifying following lines.
+When using create_yolo_dataset_from_birds525_limit_bird_species.py, specify target birds species by modifying following lines. It generates Ultralytics YOLO format dataset for "BLUE HERON", "MALLARD DUCK", "EUROPEAN TURTLE DOVE", and "ROCK DOVE" with the following codes.
 
 - create_yolo_dataset_from_birds525_limit_bird_species.py
 
