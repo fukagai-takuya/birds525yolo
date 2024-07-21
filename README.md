@@ -23,3 +23,24 @@ python3 ./create_yolo_dataset_from_birds525.py path/to/kaggle/birds525/archive/ 
 ```
 python3 ./create_yolo_dataset_from_birds525_limit_bird_species.py path/to/kaggle/birds525/archive/ path/to/outputdir/
 ```
+
+### How to specify target birds species
+
+When using create_yolo_dataset_from_birds525_limit_bird_species.py, specify target birds species by modifying following lines.
+
+- create_yolo_dataset_from_birds525_limit_bird_species.py
+
+```puthon3
+def update_train_valid_subdirecotry_dict(subdirectories, labels, subdir_dict):
+
+    ...
+
+    target_bird_species = [
+        'BLUE HERON',
+        'MALLARD DUCK',
+        'EUROPEAN TURTLE DOVE',
+        'ROCK DOVE',
+    ]
+
+    ...
+```
