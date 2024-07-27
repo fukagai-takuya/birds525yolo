@@ -5,7 +5,7 @@ from ultralytics import YOLO
 
 NUMBER_OF_BIRD_SPECIES = 525
 
-def update_train_valid_subdirecotry_dict(subdirectories, labels, subdir_dict):
+def update_train_valid_subdirectory_dict(subdirectories, labels, subdir_dict):
     """
     Returns:
         (dictionary): keys are label names, values are directory objects
@@ -51,10 +51,10 @@ def check_birds525_sub_dir(train_dir, valid_dir, label_names, train_dict, valid_
     # Update subdirectory names by eliminating duplicate space characters.
     # Label names are sorted after eliminating duplicate space characters.
     train_labels = []
-    update_train_valid_subdirecotry_dict(train_dir, train_labels, train_dict)
+    update_train_valid_subdirectory_dict(train_dir, train_labels, train_dict)
 
     valid_labels = []
-    update_train_valid_subdirecotry_dict(valid_dir, valid_labels, valid_dict)
+    update_train_valid_subdirectory_dict(valid_dir, valid_labels, valid_dict)
 
     train_labels_length = len(train_labels)
 
